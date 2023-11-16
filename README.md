@@ -10,10 +10,10 @@ pip
 ## Installation
 Firstly, activate your virtual environment:
 
-[If you don't have it create it with:]
+[//]: # "If you don't have it create it with:"
 python -m venv venv
 
-[To activate virtual environment:]
+[//]: # "To activate virtual environment:"
 venv\Scripts\activate
 
 Install the required dependencies: 
