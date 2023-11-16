@@ -24,6 +24,6 @@ pip install -r requirements.txt
 To run this project use:
 flask --app main run
 
-or
+or 
 
 flask --app main --debug run
