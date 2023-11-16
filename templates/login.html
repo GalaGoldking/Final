@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Login Page
+{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+
+{% block body %}
+<!--Form-->
+
+<div class="container" id="container">
+    <!--Sign Up-->
+    <div class="form sign-up-container">
+        <form action="#" method="POST">
+            <h1>Create An Account</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" class="social"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                <a href="#" class="social"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            </div>
+
+            <span>or use your email for registration</span>
+
+            <div class="input-field">
+                <i class="fa fa-user"></i>
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-field">
+                <i class="fa fa-envelope"></i>
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="input-field">
+                <i class="fa fa-lock"></i>
+                <input type="password" placeholder="Username" required>
+            </div>
+
+            <input type="submit" class="button" value="Sign Up">
+        </form>
+    </div>
+    <!--Sign Up-->
+
+    <!--Sign In-->
+    <div class="form sign-in-container">
+        <form action="#" method="POST">
+            <h1>Login</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" class="social"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                <a href="#" class="social"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            </div>
+
+            <span>or use youe account</span>
+
+            <div class="input-field">
+                <i class="fa fa-user"></i>
+                <input type="text" placeholder="Username" required>
+            </div>
+            <div class="input-field">
+                <i class="fa fa-lock"></i>
+                <input type="password" placeholder="Username" required>
+            </div>
+
+            <a href="#">Forgot your password</a>
+            <input type="submit" class="button" value="Sign In">
+        </form>
+    </div>
+    <!--Sign In-->
+
+    <!--Overlay-->
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Welcome Back!</h1>
+                <p>To keep connected with us please login with your personal info</p>
+                <img src="{{ url_for('static', filename='image/s1.png') }}" alt="" style="height: 25rem; width: 30rem; padding-top: 5%;">
+                <button class="button btn" id="signIn">Sign In</button>
+            </div>
+
+            <div class="overlay-panel overlay-right">
+                <h1>Hello User!</h1>
+                <p>Enter your personal details and start your journey with us</p>
+                <img src="{{ url_for('static', filename='image/s3.png') }}" alt="" style="height: 25rem; width: 30rem; padding-top: 5%;">
+                <button class="button btn" id="signUp">Sign Up</button>
+            </div>
+        </div>
+    </div>
+    <!--Overlay-->
+
+</div>
+<!--Form-->
+
+
+<script>
+
+    const signUpButton = document.getElementById('signUp');
+    const signInButton = document.getElementById('signIn');
+    const container = document.getElementById('container');
+
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener('click', () => {
+        container.classList.remove('right-panel-active');
+    });
+
+</script>
+
+{% endblock %}

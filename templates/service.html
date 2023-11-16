@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Service
+{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/service.css') }}">
+{% endblock %}
+
+
+{% block body %}
+
+<!--about-->
+
+<section>
+    <div class="container">
+        <div class="about">
+
+            <h3 style="padding-left: 30%;">ABOUT US</h3>
+
+            <p style="padding-left: 30%;">"<span>Medicure</span>". It is only the online deals site of medications supported by a US pharmacy. Situated at the edge of central park and downtown in the 6th district of the united states.
+            
+
+                "<span>Medicure</span>" pharmacy is open Monday to Friday from 8:30 to 20:00 and saturday from 9:00 to 20:00.
+
+                "<span>Medicure</span>", the pioneer in pharmacy and US pharmacy offers a world wide determination of pharmacy items, natural drugs, fragrant healing, and medications(homeopathy, veterinary items, medicines and over the counter prescriptions) at the best costs.
+            </p>
+            <a href="#" class="btn">Read More</a>
+            <div class="about-form">
+                <img src="{{ url_for('static', filename='image/p1.png') }}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--about-->
+
+{% endblock %}

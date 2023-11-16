@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home Page
+{% endblock %}
+
+
+{% block body %}
+
+<section class="main">
+    <div class="left">
+        <h2>We Are Here For Your Care</h2>
+        <h1>We Are The Best Pharmacy</h1>
+        <p>We are here for your care 24/7. Any help just call us</p>
+
+        <button>Make An Appointment</button>
+    </div>
+
+    <div class="right">
+        <img src="{{ url_for('static', filename='image/w1.png') }}" alt="">
+    </div>
+</section>
+
+{% endblock %}
