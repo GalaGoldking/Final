@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ session.username }} Edit Info
+{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/changepass.css') }}">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+
+{% block body %}
+<div class="container" id="container">
+    <form action="{{ url_for('editUser') }}" method="POST">
+        <br>
+        <h1>Edit Info</h1>
+
+        <br>
+        <div class="input-field">
+            <i class="fa fa-user"></i>
+            <input type="text" name="user_name" value="{{ user.user_name }}" required>
+        </div>
+        <div class="input-field">
+            <i class="fa fa-user"></i>
+            <input type="text" name="user_surname" value="{{ user.user_surname }}" required>
+        </div>
+        <div class="input-field">
+            <i class="fa fa-user"></i>
+            <input type="email" name="email" value="{{ user.email }}" required>
+        </div>
+
+        <input type="submit" class="button" value="Submit" style="margin-top: 30px; margin-bottom: 30px;">
+    </form>
+</div>
+{% endblock %}

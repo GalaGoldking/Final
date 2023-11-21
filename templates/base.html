@@ -23,11 +23,21 @@
 
         <nav class="headbar">
             <a href="{{ url_for('home') }}">Home</a>
+            {% if session.username == 'admin' %}
+            <a href="#">API</a>
+            {% endif %}
+            {% if session.authenticated %}
+            <a href="{{ url_for('user_page', user_id=session.uid) }}">{{ session.username }}</a>
+            {% else %}
             <a href="{{ url_for('login') }}">Login</a>
+            {% endif %}
             <a href="{{ url_for('doctors') }}">Doctors</a>
             <a href="{{ url_for('medicine') }}">Medicine</a>
             <a href="{{ url_for('service') }}">Service</a>
             <a href="{{ url_for('contact') }}">Contact</a>
+            {% if session.authenticated %}
+            <a href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
         </nav>
 
 

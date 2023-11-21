@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ session.username }}'s User Page
+{% endblock %}
+
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+
+
+{% block body %}
+<section class="user-section">
+    <div class="user-container">
+        <div class="about">
+
+            <h3 style="padding-left: 30%; padding-bottom: 0;">{{ session.username }}</h3>
+            <h3 style="padding-left: 30%; font-size: 2.5rem;">{{ user.email }}</h3>
+            <h1 style="padding-left: 30%;">Hello {{ user.user_name }} {{ user.user_surname }}</h1>
+            <p style="padding-left: 30%;">
+            
+            </p>
+            <a href="{{ url_for('editUser') }}" class="btn">Edit User Info</a>
+            <div class="about-form">
+                <img src="{{ url_for('static', filename='image/profile1.png') }}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bottom" id="bottom">
+    <div class="cart-container">
+        <h1 class="heading">Cart</h1><hr>
+    </div>
+
+    <!--box-container-->
+    
+    <div class="box-container">
+        <!--img-box-->
+        {% for item in cartItems %}
+            <div class="box">
+                <div class="slide-img">
+                    <img src="{{ url_for('static', filename='image/' ~ item.product_image) }}" style="width: 90%; padding-left: 15%;" alt="">
+
+                    <!--overlay-->
+                    <div class="overlay">
+                        <p>{{ item.product_desctiption }}</p>
+                        <a href="#" class="learn-btn">Learn More</a>
+                    </div>
+                    <!--overlay-->
+                </div>
+                <!--star-->
+                <div class="stars">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+                </div>
+                <!--star-->
+
+                <!--detail-box-->
+                <div class="detail-box">
+
+                    <!--type-->
+                    <div class="type">
+                        <a href="#">{{ item.product_name }}</a>
+                        <span>new arrival</span>
+                    </div>
+                    <!--type-->
+
+                    <!--price-->
+                    <a href="#" class="price">${{ item.product_price }}</a>
+                    <!--price-->
+                </div>
+
+                <!--button-->
+
+                <a href="{{ url_for('deleteFromCart', id=item.product_id) }}" class="my-button" title="b-title">Delete from cart</a>
+                <!--button-->
+            </div>
+        {% endfor %}
+    </div>
+
+    <!--box-container-->
+
+</section>
+
+
+{% endblock %}
