@@ -20,65 +20,15 @@ Contact
     </div>
 
     <div class="wrapper">
-        <div class="container">
-            <div class="img-wrapper">
-                <img src="{{ url_for('static', filename='image/i4.png') }}" alt="">
-            </div>
-
-            <div class="details">
-                <h3>Carolina</h3>
-                <h5>Internal Medicine | 5 years exp</h5>
-
-                <div class="social-icons">
-                    <i class="fa fa-facebook"></i>
-                    <i class="fa fa-twitter"></i>
-                    <i class="fa fa-instagram"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="img-wrapper">
-                <img src="{{ url_for('static', filename='image/i3.png') }}" alt="">
-            </div>
-
-            <div class="details">
-                <h3>Rosiee</h3>
-                <h5>Dermatology | 10 years exp</h5>
-
-                <div class="social-icons">
-                    <i class="fa fa-facebook"></i>
-                    <i class="fa fa-twitter"></i>
-                    <i class="fa fa-instagram"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="img-wrapper">
-                <img src="{{ url_for('static', filename='image/i2.png') }}" alt="">
-            </div>
-
-            <div class="details">
-                <h3>Smith</h3>
-                <h5>Cardiology | 19 years exp</h5>
-
-                <div class="social-icons">
-                    <i class="fa fa-facebook"></i>
-                    <i class="fa fa-twitter"></i>
-                    <i class="fa fa-instagram"></i>
-                </div>
-            </div>
-        </div>
-
+        {% for creator in creators %}
         <div class="container">
             <div class="img-wrapper">
                 <img src="{{ url_for('static', filename='image/i1.png') }}" alt="">
             </div>
 
             <div class="details">
-                <h3>John</h3>
-                <h5>ENT | 25 years exp</h5>
+                <h3> {{ creator.creator_name }} {{ creator.creator_surname }} </h3>
+                <h5> {{ creator.creator_role }} </h5>
 
                 <div class="social-icons">
                     <i class="fa fa-facebook"></i>
@@ -87,6 +37,9 @@ Contact
                 </div>
             </div>
         </div>
+        {% endfor %}
+
+        
     </div>
 </section>
 
@@ -94,7 +47,7 @@ Contact
     <div class="con">
         <h1 class="heading">LOCATION</h1><hr>
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d320668.45270979754!2d71.50158234999999!3d51.1043588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424580c47db54609%3A0x97f9148dddb19228!2z0JDRgdGC0LDQvdCwLCDQmtCw0LfQsNGF0YHRgtCw0L0!5e0!3m2!1sru!2sau!4v1700145241871!5m2!1sru!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5011.887241055718!2d71.41892371478808!3d51.0910479896302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x424585a605525605%3A0x4dff4a1973f7567e!2sAstana%20IT%20University!5e0!3m2!1sru!2sau!4v1700417402351!5m2!1sru!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </section>
 
