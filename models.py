@@ -66,7 +66,3 @@ class Cart(db.Model):
     def __init__(self, user_id, product_id):
         self.user_id = user_id
         self.product_id = product_id
-
-with app.app_context():
-    db.init_app(app)
-    db.create_all()
