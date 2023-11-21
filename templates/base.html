@@ -24,7 +24,7 @@
         <nav class="headbar">
             <a href="{{ url_for('home') }}">Home</a>
             {% if session.username == 'admin' %}
-            <a href="#">API</a>
+            <a href="http://127.0.0.1:8000/docs">API</a>
             {% endif %}
             {% if session.authenticated %}
             <a href="{{ url_for('user_page', user_id=session.uid) }}">{{ session.username }}</a>

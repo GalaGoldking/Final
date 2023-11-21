@@ -1,5 +1,9 @@
 from models import db, User, Products, Cart
 
+def show_all_users():
+    all_users = db.session.query(User).all()
+    return all_users
+
 def add_user(user:User):
     db.session.add(user)
     db.session.commit()
